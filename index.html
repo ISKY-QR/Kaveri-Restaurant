@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Restaurant Menu Book</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- QR Code Screen -->
+  <div id="qr-screen" class="qr-screen">
+    <h1>Scan to View Menu</h1>
+    <canvas id="qrcode"></canvas>
+    <p>Scan the QR code to open the menu</p>
+    <button id="openMenuBtn">Open Menu</button>
+  </div>
+
+  <!-- Menu Book (Initially Hidden) -->
+  <div class="menu-book" id="menu-book" style="display:none;">
+    <!-- <header>
+      <h1>Welcome to The Taste Journal</h1>
+      <p class="subtitle">A Gourmet Experience</p>
+    </header> -->
+    <header>
+      <h1 id="title">Welcome to The Kaveri Family Restaurant</h1>
+      <p class="subtitle" id="subtitle">A Gourmet Experience</p>
+      <button id="langToggle">हिंदी</button>
+    </header>
+
+
+    <main id="menu-sections">
+      <!-- Menu sections will be rendered here by JS -->
+    </main>
+  </div>
+
+  <!-- Modal for dish details -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img id="modal-img" src="" alt="Dish Image" />
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <h4>Ingredients:</h4>
+      <ul id="modal-ingredients"></ul>
+      <h4 id="modal-price"></h4>
+    </div>
+  </div>
+
+  <!-- QR Code Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

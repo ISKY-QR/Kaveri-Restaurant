@@ -413,50 +413,29 @@ const menuSections = [
 // ----- QR Code -----
 document.addEventListener("DOMContentLoaded", () => {
 
-
-  const urlParams = new URLSearchParams(window.location.search);
+ const urlParams = new URLSearchParams(window.location.search);
   const isMenuPage = urlParams.get("menu") === "true";
 
   if (isMenuPage) {
-    // Show Welcome Screen directly
+    // Show Welcome Screen directly on scanned link
     document.getElementById("qr-screen").style.display = "none";
     document.getElementById("welcome-screen").style.display = "block";
   } else {
-    // Show QR code (points to ?menu=true link)
+    // Generate QR that points to ?menu=true
     const qrCanvas = document.getElementById("qrcode");
-    QRCode.toCanvas(qrCanvas, window.location.href + "?menu=true", function (error) {
+    const qrLink = window.location.origin + window.location.pathname + "?menu=true";
+    QRCode.toCanvas(qrCanvas, qrLink, function (error) {
       if (error) console.error(error);
     });
   }
 
-  // Open Menu button
+  // Open Menu button → show full menu
   document.getElementById("openMenuBtn").addEventListener("click", () => {
     document.getElementById("welcome-screen").style.display = "none";
     document.getElementById("menu-book").style.display = "block";
   });
 
-
-
-
-
-
-
-
-
-
-
-
-  const qrCanvas = document.getElementById("qrcode");
-  QRCode.toCanvas(qrCanvas, window.location.href, function (error) {
-    if (error) console.error(error);
-  });
-
-  document.getElementById("openMenuBtn").addEventListener("click", () => {
-    document.getElementById("qr-screen").style.display = "none";
-    document.getElementById("menu-book").style.display = "block";
-  });
-
-  // Language toggle button
+  // Language toggle
   document.getElementById("langToggle").addEventListener("click", () => {
     currentLang = currentLang === "en" ? "hi" : "en";
     document.getElementById("langToggle").textContent =

@@ -412,6 +412,40 @@ const menuSections = [
 
 // ----- QR Code -----
 document.addEventListener("DOMContentLoaded", () => {
+
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const isMenuPage = urlParams.get("menu") === "true";
+
+  if (isMenuPage) {
+    // Show Welcome Screen directly
+    document.getElementById("qr-screen").style.display = "none";
+    document.getElementById("welcome-screen").style.display = "block";
+  } else {
+    // Show QR code (points to ?menu=true link)
+    const qrCanvas = document.getElementById("qrcode");
+    QRCode.toCanvas(qrCanvas, window.location.href + "?menu=true", function (error) {
+      if (error) console.error(error);
+    });
+  }
+
+  // Open Menu button
+  document.getElementById("openMenuBtn").addEventListener("click", () => {
+    document.getElementById("welcome-screen").style.display = "none";
+    document.getElementById("menu-book").style.display = "block";
+  });
+
+
+
+
+
+
+
+
+
+
+
+
   const qrCanvas = document.getElementById("qrcode");
   QRCode.toCanvas(qrCanvas, window.location.href, function (error) {
     if (error) console.error(error);

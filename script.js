@@ -14,6 +14,9 @@ const translations = {
       drinks: "Drinks",
       desserts: "Desserts",
       snacks: "Snacks",
+      soupVegetarian: "soupVegetarian",
+      basmatiRice: "basmatiRice",
+      dal: 'dal'
     }
   },
   hi: {
@@ -28,6 +31,9 @@ const translations = {
       drinks: "पेय",
       desserts: "मिठाइयाँ",
       snacks: "स्नैक्स",
+      soupVegetarian: "soupVegetarian",
+      basmatiRice: "basmatiRice",
+      dal: 'dal'
     }
   }
 };
@@ -35,8 +41,283 @@ const translations = {
 
 const menuItems = [
 
-  //Snacks
 
+
+  // 🥘 Dal
+  {
+    type: "dal",
+    name: { en: "Yellow Dal Fry", hi: "येलो दाल फ्राई" },
+    price: 135,
+    image: "https://source.unsplash.com/400x300/?dal-fry",
+    about: { en: "Classic yellow dal tempered with spices.", hi: "मसालों के तड़के के साथ क्लासिक पीली दाल।" },
+    ingredients: { en: ["Yellow Dal", "Onion", "Tomato", "Spices"], hi: ["पीली दाल", "प्याज़", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "dal",
+    name: { en: "Dal Tadka", hi: "दाल तड़का" },
+    price: 150,
+    image: "https://source.unsplash.com/400x300/?dal-tadka",
+    about: { en: "Dal cooked with butter and tempered with ghee & spices.", hi: "घी और मसालों के तड़के वाली स्वादिष्ट दाल।" },
+    ingredients: { en: ["Yellow Dal", "Ghee", "Spices"], hi: ["पीली दाल", "घी", "मसाले"] }
+  },
+  {
+    type: "dal",
+    name: { en: "Dal Makhani", hi: "दाल मखनी" },
+    price: 220,
+    image: "https://source.unsplash.com/400x300/?dal-makhani",
+    about: { en: "Rich and creamy dal made with black lentils.", hi: "क्रीम और मक्खन से बनी स्वादिष्ट दाल मखनी।" },
+    ingredients: { en: ["Black Lentils", "Butter", "Cream", "Spices"], hi: ["काली दाल", "मक्खन", "क्रीम", "मसाले"] }
+  },
+  {
+    type: "dal",
+    name: { en: "Egg Tadka", hi: "एग तड़का" },
+    price: 160,
+    image: "https://source.unsplash.com/400x300/?egg-dal",
+    about: { en: "Unique dal tadka with scrambled eggs.", hi: "फेंटा हुआ अंडा मिलाकर बनी खास दाल तड़का।" },
+    ingredients: { en: ["Dal", "Egg", "Spices"], hi: ["दाल", "अंडा", "मसाले"] }
+  },
+  {
+    type: "dal",
+    name: { en: "Kaveri Special Dal Fry", hi: "कावेरी स्पेशल दाल फ्राई" },
+    price: 170,
+    image: "https://source.unsplash.com/400x300/?special-dal",
+    about: { en: "Special house-style dal fry.", hi: "कावेरी स्टाइल का विशेष दाल फ्राई।" },
+    ingredients: { en: ["Dal", "Onion", "Tomato", "Spices"], hi: ["दाल", "प्याज़", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "dal",
+    name: { en: "Chana Dal Tadka", hi: "चना दाल तड़का" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?chana-dal",
+    about: { en: "Nutritious chana dal cooked with spices.", hi: "चना दाल मसालों के साथ पकाई हुई।" },
+    ingredients: { en: ["Chana Dal", "Onion", "Tomato", "Spices"], hi: ["चना दाल", "प्याज़", "टमाटर", "मसाले"] }
+  },
+
+
+  // 🍚 Basmati Rice (Veg / Non-Veg)
+  {
+    type: "basmatiRice",
+    name: { en: "Steam Rice", hi: "स्टीम राइस" },
+    price: 80,
+    image: "https://source.unsplash.com/400x300/?steam-rice",
+    about: { en: "Plain steamed basmati rice.", hi: "साधारण स्टीम्ड बासमती चावल।" },
+    ingredients: { en: ["Rice", "Water"], hi: ["चावल", "पानी"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Jeera Rice", hi: "जीरा राइस" },
+    price: 120,
+    image: "https://source.unsplash.com/400x300/?jeera-rice",
+    about: { en: "Basmati rice tempered with cumin seeds.", hi: "बासमती चावल को जीरे के साथ तड़का।" },
+    ingredients: { en: ["Rice", "Cumin", "Ghee"], hi: ["चावल", "जीरा", "घी"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Veg Fried Rice", hi: "वेज फ्राइड राइस" },
+    price: 180,
+    image: "https://source.unsplash.com/400x300/?veg-fried-rice",
+    about: { en: "Chinese style vegetable fried rice.", hi: "चाइनीज़ स्टाइल वेज फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Vegetables", "Soy Sauce"], hi: ["चावल", "सब्ज़ियां", "सोया सॉस"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Mix Veg Fried Rice", hi: "मिक्स वेज फ्राइड राइस" },
+    price: 200,
+    image: "https://source.unsplash.com/400x300/?mix-veg-rice",
+    about: { en: "Fried rice with assorted vegetables.", hi: "विभिन्न सब्ज़ियों के साथ फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Mixed Vegetables", "Spices"], hi: ["चावल", "मिक्स सब्ज़ियां", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Veg Pulao", hi: "वेज पुलाव" },
+    price: 200,
+    image: "https://source.unsplash.com/400x300/?veg-pulao",
+    about: { en: "Aromatic rice with vegetables and spices.", hi: "खुशबूदार चावल सब्ज़ियों और मसालों के साथ।" },
+    ingredients: { en: ["Rice", "Vegetables", "Spices"], hi: ["चावल", "सब्ज़ियां", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Green Peas Pulao", hi: "मटर पुलाव" },
+    price: 160,
+    image: "https://source.unsplash.com/400x300/?peas-pulao",
+    about: { en: "Pulao made with green peas.", hi: "हरी मटर से बना पुलाव।" },
+    ingredients: { en: ["Rice", "Green Peas", "Spices"], hi: ["चावल", "हरी मटर", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Mushroom Fried Rice", hi: "मशरूम फ्राइड राइस" },
+    price: 190,
+    image: "https://source.unsplash.com/400x300/?mushroom-rice",
+    about: { en: "Fried rice cooked with mushrooms.", hi: "मशरूम से बना फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Mushroom", "Soy Sauce"], hi: ["चावल", "मशरूम", "सोया सॉस"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Veg Biryani", hi: "वेज बिरयानी" },
+    price: 180,
+    image: "https://source.unsplash.com/400x300/?veg-biryani",
+    about: { en: "Fragrant biryani with vegetables.", hi: "खुशबूदार वेज बिरयानी।" },
+    ingredients: { en: ["Rice", "Vegetables", "Spices"], hi: ["चावल", "सब्ज़ियां", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Kashmiri Pulao", hi: "कश्मीरी पुलाव" },
+    price: 200,
+    image: "https://source.unsplash.com/400x300/?kashmiri-pulao",
+    about: { en: "Sweet & fragrant pulao with dry fruits.", hi: "सूखे मेवों के साथ मीठा और खुशबूदार पुलाव।" },
+    ingredients: { en: ["Rice", "Dry Fruits", "Spices"], hi: ["चावल", "मेवे", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Paneer Biryani", hi: "पनीर बिरयानी" },
+    price: 180,
+    image: "https://source.unsplash.com/400x300/?paneer-biryani",
+    about: { en: "Biryani made with paneer cubes and spices.", hi: "पनीर और मसालों से बनी बिरयानी।" },
+    ingredients: { en: ["Rice", "Paneer", "Spices"], hi: ["चावल", "पनीर", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Veg Schezwan Fried Rice", hi: "वेज़ शेज़वान फ्राइड राइस" },
+    price: 180,
+    image: "https://source.unsplash.com/400x300/?schezwan-rice",
+    about: { en: "Spicy Schezwan style fried rice.", hi: "मसालेदार शेज़वान स्टाइल फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Vegetables", "Schezwan Sauce"], hi: ["चावल", "सब्ज़ियां", "शेज़वान सॉस"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Egg Fried Rice", hi: "एग फ्राइड राइस" },
+    price: 230,
+    image: "https://source.unsplash.com/400x300/?egg-fried-rice",
+    about: { en: "Fried rice with scrambled eggs.", hi: "अंडे के साथ फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Egg", "Soy Sauce"], hi: ["चावल", "अंडा", "सोया सॉस"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Chicken Fried Rice", hi: "चिकन फ्राइड राइस" },
+    price: 250,
+    image: "https://source.unsplash.com/400x300/?chicken-fried-rice",
+    about: { en: "Chinese style fried rice with chicken.", hi: "चिकन के साथ चाइनीज़ स्टाइल फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Chicken", "Soy Sauce"], hi: ["चावल", "चिकन", "सोया सॉस"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Non-Veg Mix Fried Rice", hi: "नॉन वेज मिक्स फ्राइड राइस" },
+    price: 210,
+    image: "https://source.unsplash.com/400x300/?mixed-fried-rice",
+    about: { en: "Fried rice with chicken, egg & vegetables.", hi: "चिकन, अंडा और सब्ज़ियों के साथ फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Chicken", "Egg", "Vegetables"], hi: ["चावल", "चिकन", "अंडा", "सब्ज़ियां"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Chicken Biryani", hi: "चिकन बिरयानी" },
+    price: 240,
+    image: "https://source.unsplash.com/400x300/?chicken-biryani",
+    about: { en: "Authentic chicken biryani with spices.", hi: "मसालों के साथ असली चिकन बिरयानी।" },
+    ingredients: { en: ["Rice", "Chicken", "Spices"], hi: ["चावल", "चिकन", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Egg Biryani", hi: "एग बिरयानी" },
+    price: 190,
+    image: "https://source.unsplash.com/400x300/?egg-biryani",
+    about: { en: "Biryani made with boiled eggs.", hi: "उबले अंडे से बनी बिरयानी।" },
+    ingredients: { en: ["Rice", "Egg", "Spices"], hi: ["चावल", "अंडा", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Mutton Biryani", hi: "मटन बिरयानी" },
+    price: 230,
+    image: "https://source.unsplash.com/400x300/?mutton-biryani",
+    about: { en: "Traditional mutton biryani cooked slowly.", hi: "धीमी आँच पर पकी पारंपरिक मटन बिरयानी।" },
+    ingredients: { en: ["Rice", "Mutton", "Spices"], hi: ["चावल", "मटन", "मसाले"] }
+  },
+  {
+    type: "basmatiRice",
+    name: { en: "Chicken Schezwan Fried Rice", hi: "चिकन शेज़वान फ्राइड राइस" },
+    price: 230,
+    image: "https://source.unsplash.com/400x300/?chicken-schezwan-rice",
+    about: { en: "Spicy Schezwan chicken fried rice.", hi: "मसालेदार शेज़वान चिकन फ्राइड राइस।" },
+    ingredients: { en: ["Rice", "Chicken", "Schezwan Sauce"], hi: ["चावल", "चिकन", "शेज़वान सॉस"] }
+  },
+
+
+  // 🥣 Soup Vegetarian
+  {
+    type: "soupVegetarian",
+    name: { en: "Veg Tomato Soup", hi: "वेज टमाटर सूप" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?tomato-soup",
+    about: { en: "Fresh tomato soup with mild spices.", hi: "ताज़े टमाटर से बना स्वादिष्ट सूप।" },
+    ingredients: { en: ["Tomato", "Spices", "Butter"], hi: ["टमाटर", "मसाले", "मक्खन"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Veg Sweet Corn Soup", hi: "वेज स्वीट कॉर्न सूप" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?sweet-corn-soup",
+    about: { en: "Sweet corn soup with vegetables.", hi: "स्वीट कॉर्न और सब्ज़ियों से बना सूप।" },
+    ingredients: { en: ["Sweet Corn", "Vegetables", "Spices"], hi: ["स्वीट कॉर्न", "सब्ज़ियां", "मसाले"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Veg Manchow Soup", hi: "वेज मंचाओ सूप" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?manchow-soup",
+    about: { en: "Spicy Indo-Chinese manchow soup.", hi: "मसालेदार इंडो-चाइनीज मंचाओ सूप।" },
+    ingredients: { en: ["Vegetables", "Garlic", "Soy Sauce"], hi: ["सब्ज़ियां", "लहसुन", "सोया सॉस"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Cream of Mushroom Soup", hi: "क्रीम ऑफ मशरूम सूप" },
+    price: 120,
+    image: "https://source.unsplash.com/400x300/?mushroom-soup",
+    about: { en: "Creamy mushroom soup with rich flavor.", hi: "गाढ़ा और स्वादिष्ट मशरूम सूप।" },
+    ingredients: { en: ["Mushroom", "Cream", "Spices"], hi: ["मशरूम", "क्रीम", "मसाले"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Gourd Soup", hi: "लौकी का सूप" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?gourd-soup",
+    about: { en: "Healthy bottle gourd soup.", hi: "स्वस्थ लौकी का सूप।" },
+    ingredients: { en: ["Bottle Gourd", "Spices"], hi: ["लौकी", "मसाले"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Spinach Soup", hi: "पालक का सूप" },
+    price: 110,
+    image: "https://source.unsplash.com/400x300/?spinach-soup",
+    about: { en: "Nutritious spinach soup.", hi: "पौष्टिक पालक का सूप।" },
+    ingredients: { en: ["Spinach", "Garlic", "Spices"], hi: ["पालक", "लहसुन", "मसाले"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Veg Clear Soup", hi: "वेज क्लियर सूप" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?clear-soup",
+    about: { en: "Light and clear vegetable soup.", hi: "हल्का और साफ़ सब्ज़ी का सूप।" },
+    ingredients: { en: ["Vegetables", "Salt", "Pepper"], hi: ["सब्ज़ियां", "नमक", "काली मिर्च"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Veg Kaveri Soup", hi: "वेज कावेरी सूप" },
+    price: 110,
+    image: "https://source.unsplash.com/400x300/?veg-soup",
+    about: { en: "Special Kaveri style veg soup.", hi: "कावेरी स्टाइल का विशेष वेज सूप।" },
+    ingredients: { en: ["Vegetables", "Spices"], hi: ["सब्ज़ियां", "मसाले"] }
+  },
+  {
+    type: "soupVegetarian",
+    name: { en: "Veg Hot & Sour Soup", hi: "वेज हॉट एंड सॉर सूप" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?hot-sour-soup",
+    about: { en: "Tangy and spicy Indo-Chinese soup.", hi: "खट्टा-तीखा इंडो-चाइनीज सूप।" },
+    ingredients: { en: ["Vegetables", "Soy Sauce", "Vinegar"], hi: ["सब्ज़ियां", "सोया सॉस", "सिरका"] }
+  },
+
+
+
+  //Snacks
 
   {
     type: "snacks",
@@ -405,6 +686,9 @@ const menuSections = [
   // { type: "starters" },
   { type: "breakfast" },
   { type: "snacks" },
+  { type: "soupVegetarian" },
+  { type: "basmatiRice" },
+  { type: "dal" },
   { type: "main" },
   { type: "drinks" },
   { type: "desserts" }
@@ -413,7 +697,7 @@ const menuSections = [
 // ----- QR Code -----
 document.addEventListener("DOMContentLoaded", () => {
 
- const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(window.location.search);
   const isMenuPage = urlParams.get("menu") === "true";
 
   if (isMenuPage) {

@@ -410,34 +410,19 @@ const menuSections = [
   { type: "desserts" }
 ];
 
-// ----- App Logic -----
+// ----- QR Code -----
 document.addEventListener("DOMContentLoaded", () => {
-
-
-
-  // Generate QR code
-  const currentUrl = window.location.href;
-  new QRCode(document.getElementById("qrcode"), {
-    text: currentUrl,
-    width: 200,
-    height: 200,
+  const qrCanvas = document.getElementById("qrcode");
+  QRCode.toCanvas(qrCanvas, window.location.href, function (error) {
+    if (error) console.error(error);
   });
 
-  // If user is on a phone (after scanning), skip QR and show welcome screen
-  if (/Mobi|Android/i.test(navigator.userAgent)) {
-    document.getElementById("qr-screen").style.display = "none";
-    document.getElementById("welcome-screen").style.display = "block";
-  }
-
-
-
-  // Open Menu Button
   document.getElementById("openMenuBtn").addEventListener("click", () => {
-    document.getElementById("welcome-screen").style.display = "none";
+    document.getElementById("qr-screen").style.display = "none";
     document.getElementById("menu-book").style.display = "block";
   });
 
-  // Language toggle
+  // Language toggle button
   document.getElementById("langToggle").addEventListener("click", () => {
     currentLang = currentLang === "en" ? "hi" : "en";
     document.getElementById("langToggle").textContent =
@@ -467,59 +452,68 @@ function renderMenu() {
   const container = document.getElementById("menu-sections");
   container.innerHTML = "";
 
+  let tipAdded = false;
+
   menuSections.forEach((sec) => {
     const secDiv = document.createElement("section");
-    secDiv.className = "menu-section";
+    secDiv.className = "menu-section"; // stays collapsed by default
 
     const headline = document.createElement("h2");
     headline.className = "menu-headline";
     headline.textContent = t.sections[sec.type];
 
-    const list = document.createElement("ul");
-    list.className = "menu-list";
+    // toggle open/close
+    headline.addEventListener("click", () => {
+      secDiv.classList.toggle("active");
+    });
+
+    if (!tipAdded && sec.type === "starters") {
+      const tip = document.createElement("p");
+      tip.className = "menu-tip";
+      tip.textContent = t.tip;
+      secDiv.appendChild(tip);
+      secDiv.appendChild(headline);
+      tipAdded = true;
+    } else {
+      secDiv.appendChild(headline);
+    }
+
+    const ul = document.createElement("ul");
+    ul.className = "menu-list";
 
     menuItems
       .filter((item) => item.type === sec.type)
       .forEach((item) => {
         const li = document.createElement("li");
         li.className = "menu-item";
+        li.addEventListener("click", () => openModal(item));
 
-        const name = document.createElement("span");
-        name.className = "menu-item-name";
-        name.textContent = item.name[currentLang];
-
-        const price = document.createElement("span");
-        price.className = "menu-item-price";
-        price.textContent = `₹${item.price}`;
-
-        li.appendChild(name);
-        li.appendChild(price);
-
-        li.onclick = () => openModal(item);
-
-        list.appendChild(li);
+        li.innerHTML = `
+          <span class="menu-item-name">${item.name[currentLang]}</span>
+          <span class="menu-item-price">₹${item.price}</span>
+        `;
+        ul.appendChild(li);
       });
 
-    secDiv.appendChild(headline);
-    secDiv.appendChild(list);
+    secDiv.appendChild(ul);
     container.appendChild(secDiv);
   });
 }
 
 // ----- Modal -----
 function openModal(item) {
+  const t = translations[currentLang];
   document.getElementById("modal-img").src = item.image;
   document.getElementById("modal-title").textContent = item.name[currentLang];
   document.getElementById("modal-desc").textContent = item.about[currentLang];
-  document.getElementById("modal-price").textContent = `₹${item.price}`;
+  document.getElementById("modal-price").textContent = `${t.price}: ₹${item.price}`;
 
-  const ul = document.getElementById("modal-ingredients");
-  ul.innerHTML = "";
+  const ingUl = document.getElementById("modal-ingredients");
+  ingUl.innerHTML = "";
   item.ingredients[currentLang].forEach((ing) => {
-    const li = document.createElement("li");
-    li.textContent = ing;
-    ul.appendChild(li);
+    ingUl.innerHTML += `<li>${ing}</li>`;
   });
 
   document.getElementById("modal").style.display = "block";
 }
+

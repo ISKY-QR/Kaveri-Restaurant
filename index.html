@@ -6,31 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Restaurant Menu Book</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
-  <!-- QR Code Screen (first screen for desktop) -->
+  <!-- QR Code Screen -->
   <div id="qr-screen" class="qr-screen">
-    <h2>Scan to View Menu</h2>
-    <div id="qrcode"></div>
-  </div>
-
-  <!-- Welcome Screen (only shows on mobile after scanning QR) -->
-  <div id="welcome-screen" class="qr-screen" style="display:none;">
-    <h1 id="welcome-title">Welcome to The Kaveri Family Restaurant</h1>
+    <h1>Scan to View Menu</h1>
+    <canvas id="qrcode"></canvas>
+    <p>Scan the QR code to open the menu</p>
     <button id="openMenuBtn">Open Menu</button>
   </div>
 
   <!-- Menu Book (Initially Hidden) -->
   <div class="menu-book" id="menu-book" style="display:none;">
+    <!-- <header>
+      <h1>Welcome to The Taste Journal</h1>
+      <p class="subtitle">A Gourmet Experience</p>
+    </header> -->
     <header>
       <h1 id="title">Welcome to The Kaveri Family Restaurant</h1>
       <p class="subtitle" id="subtitle">A Gourmet Experience</p>
       <button id="langToggle">हिंदी</button>
     </header>
 
-    <main id="menu-sections"></main>
+
+    <main id="menu-sections">
+      <!-- Menu sections will be rendered here by JS -->
+    </main>
   </div>
 
   <!-- Modal for dish details -->
@@ -46,7 +48,8 @@
     </div>
   </div>
 
-  <!-- JS -->
+  <!-- QR Code Library -->
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
   <script src="script.js"></script>
 </body>
 

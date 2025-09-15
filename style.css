@@ -20,33 +20,6 @@ body {
 }
 
 
-/* Keep your global background as is, only style QR box */
-#qrcode {
-  padding: 15px;
-  background: #ffffff;         /* white box behind QR */
-  border-radius: 16px;         /* rounded corners */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* soft shadow */
-  display: inline-block;
-}
-
-.qr-screen {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;    /* full height */
-  text-align: center;
-}
-
-.qr-screen h2 {
-  font-size: 1.6rem;
-  margin-bottom: 20px;
-  color: #fff; /* assume your background is dark */
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
-}
-
-
-
 .menu-list {
   display: none; /* hidden by default */
   margin: 0;

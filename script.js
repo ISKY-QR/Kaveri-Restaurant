@@ -28,6 +28,14 @@ const translations = {
       fish: "fish",
       egg: "egg",
       kababNonVegSpecial: "kababNonVegSpecial",
+      rotiNaanKulchaParatha: "roti, Naan, Kulcha, Paratha",
+      dal: "dal",
+      kababVegSpecial: "kababVegSpecial",
+      deliciousGravyChicken: "deliciousGravyChicken",
+      thandaGram: "thandaGram",
+      iceCreamDessert: "iceCreamDessert",
+      raitaSaladPapad: "raitaSaladPapad",
+      thali: "thali",
     }
   },
   hi: {
@@ -44,7 +52,6 @@ const translations = {
       snacks: "स्नैक्स",
       soupVegetarian: "soupVegetarian",
       basmatiRice: "basmatiRice",
-      dal: 'dal',
       soupNonveg: "soupNonveg",
       starterVegChinese: "starterVegChinese",
       starterNonVegChinese: "starterNonVegChinese",
@@ -56,6 +63,17 @@ const translations = {
       fish: "fish",
       egg: "egg",
       kababNonVegSpecial: "kababNonVegSpecial",
+      soupNonveg: "सूप नॉनवेज",
+      starterVegChinese: "स्टार्टर वेज चाइनीज",
+      starterNonVegChinese: "स्टार्टर नॉन वेज चाइनीज",
+      rotiNaanKulchaParatha: "रोटी, नान, कुलचा, पराठा",
+      dal: "दाल",
+      kababVegSpecial: "kababVegSpecial",
+      deliciousGravyChicken: "स्वादिष्ट ग्रेवी चिकन",
+      thandaGram: "ठंडा गरम",
+      iceCreamDessert: "आइसक्रीम, मिठाई",
+      raitaSaladPapad: "रायता सलाद पापड़",
+      thali: "थाली",
     }
   }
 };
@@ -64,7 +82,382 @@ const translations = {
 const menuItems = [
 
 
-  
+
+  //thali
+
+  {
+    type: "thali",
+    name: { en: "Veg Thali", hi: "वेज थाली" },
+    price: 230,
+    image: "https://source.unsplash.com/400x300/?veg-thali",
+    about: { en: "A complete vegetarian meal served with multiple dishes.", hi: "कई व्यंजनों के साथ परोसी गई पूरी शाकाहारी थाली।" },
+    ingredients: { en: ["Rice", "Dal", "MixVeg", "aaloo dum", "Roti", "Salad", "Papad", "Sweets"], hi: ["चपाती", "चावल", "दाल", "सब्ज़ी", "सलाद", "रायता"] }
+  },
+  {
+    type: "thali",
+    name: { en: "Non Veg Thali", hi: "नॉन वेज थाली" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?non-veg-thali",
+    about: { en: "A wholesome non-vegetarian thali served with chicken curry, dal, rice and sides.", hi: "चिकन करी, दाल, चावल और साथ में परोसी गई पौष्टिक नॉन-वेज थाली।" },
+    ingredients: { en: ["Rice", "Chicken", "aaloo dum", "Roti", "Salad", "Dal", "papad", "Sweets"], hi: ["चपाती", "चावल", "दाल", "चिकन करी", "सलाद", "रायता"] }
+  },
+
+
+  //raita
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Boondi Raita", hi: "बूंदी रायता" },
+    price: 120,
+    image: "https://source.unsplash.com/400x300/?boondi-raita",
+    about: { en: "Refreshing yogurt with crispy boondi.", hi: "दही के साथ करारी बूंदी।" },
+    ingredients: { en: ["Yogurt", "Boondi", "Spices"], hi: ["दही", "बूंदी", "मसाले"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Mix Raita", hi: "मिक्स रायता" },
+    price: 130,
+    image: "https://source.unsplash.com/400x300/?mix-raita",
+    about: { en: "Curd mixed with vegetables and spices.", hi: "सब्जियों और मसालों के साथ मिला हुआ दही।" },
+    ingredients: { en: ["Yogurt", "Cucumber", "Onion", "Spices"], hi: ["दही", "खीरा", "प्याज", "मसाले"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Pineapple Raita", hi: "पाइनएप्पल रायता" },
+    price: 150,
+    image: "https://source.unsplash.com/400x300/?pineapple-raita",
+    about: { en: "Sweet and tangy pineapple flavored raita.", hi: "मीठा और खट्टा पाइनएप्पल रायता।" },
+    ingredients: { en: ["Yogurt", "Pineapple", "Sugar", "Spices"], hi: ["दही", "अनानास", "चीनी", "मसाले"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Green Salad", hi: "ग्रीन सलाद" },
+    price: 80,
+    image: "https://source.unsplash.com/400x300/?green-salad",
+    about: { en: "Healthy and fresh green salad.", hi: "स्वस्थ और ताज़ा ग्रीन सलाद।" },
+    ingredients: { en: ["Cucumber", "Tomato", "Onion", "Lettuce"], hi: ["खीरा", "टमाटर", "प्याज", "सलाद पत्ता"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Fruit Salad", hi: "फ्रूट सलाद" },
+    price: 160,
+    image: "https://source.unsplash.com/400x300/?fruit-salad",
+    about: { en: "Fresh seasonal fruits served as salad.", hi: "ताज़ा मौसमी फलों का सलाद।" },
+    ingredients: { en: ["Fruits", "Sugar", "Honey"], hi: ["फल", "चीनी", "शहद"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Plain Curd", hi: "सादा दही" },
+    price: 80,
+    image: "https://source.unsplash.com/400x300/?plain-curd",
+    about: { en: "Simple and fresh curd.", hi: "सादा और ताज़ा दही।" },
+    ingredients: { en: ["Milk"], hi: ["दूध"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Papad", hi: "पापड़" },
+    price: 30,
+    image: "https://source.unsplash.com/400x300/?papad",
+    about: { en: "Crispy fried or roasted papad.", hi: "कुरकुरा तला या भुना पापड़।" },
+    ingredients: { en: ["Urad Dal Flour", "Salt", "Spices"], hi: ["उड़द दाल का आटा", "नमक", "मसाले"] }
+  },
+  {
+    type: "raitaSaladPapad",
+    name: { en: "Masala Papad", hi: "मसाला पापड़" },
+    price: 80,
+    image: "https://source.unsplash.com/400x300/?masala-papad",
+    about: { en: "Papad topped with onion, tomato, and spices.", hi: "प्याज, टमाटर और मसालों के साथ पापड़।" },
+    ingredients: { en: ["Papad", "Onion", "Tomato", "Spices"], hi: ["पापड़", "प्याज", "टमाटर", "मसाले"] }
+  },
+
+
+  //icecream
+  {
+    type: "iceCreamDessert",
+    name: { en: "Vanilla", hi: "वनीला" },
+    price: 50,
+    image: "https://source.unsplash.com/400x300/?vanilla-icecream",
+    about: { en: "Classic vanilla flavored ice cream.", hi: "क्लासिक वनीला फ्लेवर वाली आइसक्रीम।" },
+    ingredients: { en: ["Milk", "Cream", "Sugar", "Vanilla"], hi: ["दूध", "क्रीम", "चीनी", "वनीला"] }
+  },
+  {
+    type: "iceCreamDessert",
+    name: { en: "Butter Scotch", hi: "बटर स्कॉच" },
+    price: 70,
+    image: "https://source.unsplash.com/400x300/?butterscotch-icecream",
+    about: { en: "Delicious butterscotch ice cream.", hi: "स्वादिष्ट बटरस्कॉच आइसक्रीम।" },
+    ingredients: { en: ["Milk", "Sugar", "Butterscotch Flavor"], hi: ["दूध", "चीनी", "बटरस्कॉच फ्लेवर"] }
+  },
+  {
+    type: "iceCreamDessert",
+    name: { en: "Keshar Pista", hi: "केसर पिस्ता" },
+    price: 70,
+    image: "https://source.unsplash.com/400x300/?kesar-pista-icecream",
+    about: { en: "Rich kesar pista flavored ice cream.", hi: "गाढ़ी केसर पिस्ता स्वाद वाली आइसक्रीम।" },
+    ingredients: { en: ["Milk", "Pista", "Saffron", "Sugar"], hi: ["दूध", "पिस्ता", "केसर", "चीनी"] }
+  },
+  {
+    type: "iceCreamDessert",
+    name: { en: "Two in One", hi: "टू इन वन" },
+    price: 70,
+    image: "https://source.unsplash.com/400x300/?icecream-scoop",
+    about: { en: "Combination of two delicious flavors.", hi: "दो स्वादिष्ट फ्लेवर्स का मिश्रण।" },
+    ingredients: { en: ["Milk", "Cream", "Sugar", "Flavours"], hi: ["दूध", "क्रीम", "चीनी", "फ्लेवर"] }
+  },
+  {
+    type: "iceCreamDessert",
+    name: { en: "Sweets (2 Pc)", hi: "मिठाई (२ पीस)" },
+    price: 30,
+    image: "https://source.unsplash.com/400x300/?indian-sweets",
+    about: { en: "Traditional Indian sweets (2 pieces).", hi: "पारंपरिक भारतीय मिठाई (२ पीस)।" },
+    ingredients: { en: ["Milk", "Sugar", "Ghee"], hi: ["दूध", "चीनी", "घी"] }
+  },
+
+
+  //thanda
+
+  {
+    type: "thandaGram",
+    name: { en: "Cold Drinks", hi: "कोल्ड ड्रिंक" },
+    price: 35,
+    image: "https://source.unsplash.com/400x300/?cold-drink",
+    about: { en: "Refreshing carbonated cold drinks.", hi: "ताज़गी भरे ठंडे पेय।" },
+    ingredients: { en: ["Carbonated Water", "Sugar", "Flavor"], hi: ["कार्बोनेटेड पानी", "चीनी", "फ्लेवर"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Masala Cold Drinks", hi: "मसाला कोल्ड ड्रिंक" },
+    price: 50,
+    image: "https://source.unsplash.com/400x300/?masala-soda",
+    about: { en: "Cold drink with a twist of masala.", hi: "मसालेदार स्वाद वाला ठंडा पेय।" },
+    ingredients: { en: ["Cold Drink", "Masala"], hi: ["कोल्ड ड्रिंक", "मसाला"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Fresh Lime Water", hi: "फ्रेश लाइम वॉटर" },
+    price: 30,
+    image: "https://source.unsplash.com/400x300/?lime-water",
+    about: { en: "Chilled fresh lime water.", hi: "ठंडी ताज़ा नींबू पानी।" },
+    ingredients: { en: ["Lime", "Water", "Sugar", "Salt"], hi: ["नींबू", "पानी", "चीनी", "नमक"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Curd Lassi", hi: "दही लस्सी" },
+    price: 75,
+    image: "https://source.unsplash.com/400x300/?lassi",
+    about: { en: "Thick and creamy sweet lassi.", hi: "गाढ़ी और मलाईदार मीठी लस्सी।" },
+    ingredients: { en: ["Curd", "Sugar", "Cardamom"], hi: ["दही", "चीनी", "इलायची"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Tea", hi: "चाय" },
+    price: 25,
+    image: "https://source.unsplash.com/400x300/?tea",
+    about: { en: "Hot and refreshing tea.", hi: "गरमा गरम और ताज़गी भरी चाय।" },
+    ingredients: { en: ["Tea Leaves", "Milk", "Sugar"], hi: ["चाय पत्ती", "दूध", "चीनी"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Coffee", hi: "कॉफ़ी" },
+    price: 40,
+    image: "https://source.unsplash.com/400x300/?coffee",
+    about: { en: "Hot brewed coffee.", hi: "गरमागर्म कॉफ़ी।" },
+    ingredients: { en: ["Coffee", "Milk", "Sugar"], hi: ["कॉफ़ी", "दूध", "चीनी"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Cold Coffee", hi: "कोल्ड कॉफ़ी" },
+    price: 100,
+    image: "https://source.unsplash.com/400x300/?cold-coffee",
+    about: { en: "Iced cold coffee with milk and cream.", hi: "दूध और क्रीम वाली ठंडी कॉफ़ी।" },
+    ingredients: { en: ["Coffee", "Milk", "Ice", "Sugar"], hi: ["कॉफ़ी", "दूध", "बर्फ", "चीनी"] }
+  },
+  {
+    type: "thandaGram",
+    name: { en: "Mineral Water", hi: "मिनरल वॉटर" },
+    price: 20,
+    image: "https://source.unsplash.com/400x300/?mineral-water",
+    about: { en: "Packaged mineral drinking water.", hi: "पैक किया हुआ मिनरल वाटर।" },
+    ingredients: { en: ["Water"], hi: ["पानी"] }
+  },
+
+  //deli gravy chicken
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Curry", hi: "चिकन करी" },
+    price: [150, 250],
+    image: "https://source.unsplash.com/400x300/?chicken-curry",
+    about: { en: "Traditional chicken curry with rich spices.", hi: "गाढ़े मसालों के साथ पारंपरिक चिकन करी।" },
+    ingredients: { en: ["Chicken", "Onion", "Tomato", "Spices"], hi: ["चिकन", "प्याज", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Kassa", hi: "चिकन कसा" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?chicken-kassa",
+    about: { en: "Thick spicy chicken preparation.", hi: "गाढ़ा और मसालेदार चिकन डिश।" },
+    ingredients: { en: ["Chicken", "Onion", "Garlic", "Spices"], hi: ["चिकन", "प्याज", "लहसुन", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Masala", hi: "चिकन मसाला" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?chicken-masala",
+    about: { en: "Chicken cooked in rich onion-tomato masala.", hi: "प्याज-टमाटर मसाले में पका चिकन।" },
+    ingredients: { en: ["Chicken", "Onion", "Tomato", "Spices"], hi: ["चिकन", "प्याज", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Dopiyaza", hi: "चिकन दो प्याज़ा" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?chicken-do-pyaza",
+    about: { en: "Chicken with double onion preparation.", hi: "दोगुनी प्याज़ के साथ चिकन की डिश।" },
+    ingredients: { en: ["Chicken", "Onion", "Spices"], hi: ["चिकन", "प्याज", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Kadhahi Chicken", hi: "कड़ाही चिकन" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?kadhai-chicken",
+    about: { en: "Spicy chicken cooked in kadai with capsicum.", hi: "कड़ाही में शिमला मिर्च के साथ मसालेदार चिकन।" },
+    ingredients: { en: ["Chicken", "Capsicum", "Onion", "Spices"], hi: ["चिकन", "शिमला मिर्च", "प्याज", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Butter Masala", hi: "चिकन बटर मसाला" },
+    price: [200, 350],
+    image: "https://source.unsplash.com/400x300/?butter-chicken",
+    about: { en: "Rich buttery chicken in tomato gravy.", hi: "मलाईदार टमाटर ग्रेवी में चिकन।" },
+    ingredients: { en: ["Chicken", "Butter", "Tomato", "Cream"], hi: ["चिकन", "मक्खन", "टमाटर", "क्रीम"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Bharta", hi: "चिकन भरता" },
+    price: 300,
+    image: "https://source.unsplash.com/400x300/?chicken-bharta",
+    about: { en: "Shredded chicken cooked with spicy gravy.", hi: "मसालेदार ग्रेवी में पका हुआ रेशेदार चिकन।" },
+    ingredients: { en: ["Chicken", "Onion", "Tomato", "Spices"], hi: ["चिकन", "प्याज", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Bhuna", hi: "चिकन भुना" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?chicken-bhuna",
+    about: { en: "Slow-cooked chicken with thick masala.", hi: "गाढ़े मसाले में धीमी आंच पर पका चिकन।" },
+    ingredients: { en: ["Chicken", "Onion", "Tomato", "Spices"], hi: ["चिकन", "प्याज", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Murg Musallam", hi: "मुर्ग मुसल्लम" },
+    price: 650,
+    image: "https://source.unsplash.com/400x300/?murg-musallam",
+    about: { en: "Whole chicken marinated and cooked in rich gravy.", hi: "पूरे चिकन को मैरीनेट करके गाढ़ी ग्रेवी में पकाया गया।" },
+    ingredients: { en: ["Whole Chicken", "Yogurt", "Spices"], hi: ["पूरा चिकन", "दही", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Kaweri Spl. Chicken Dehati", hi: "कावेरी स्पेशल चिकन देहाती" },
+    price: 600,
+    image: "https://source.unsplash.com/400x300/?chicken-dehati",
+    about: { en: "Special village-style spicy chicken curry.", hi: "विशेष देहाती स्टाइल मसालेदार चिकन करी।" },
+    ingredients: { en: ["Chicken", "Spices", "Mustard Oil"], hi: ["चिकन", "मसाले", "सरसों का तेल"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Handi", hi: "चिकन हांडी" },
+    price: 440,
+    image: "https://source.unsplash.com/400x300/?chicken-handi",
+    about: { en: "Chicken slow-cooked in handi with rich flavors.", hi: "हांडी में धीमी आंच पर पका हुआ चिकन।" },
+    ingredients: { en: ["Chicken", "Onion", "Tomato", "Spices"], hi: ["चिकन", "प्याज", "टमाटर", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Patiyala", hi: "चिकन पटियाला" },
+    price: 380,
+    image: "https://source.unsplash.com/400x300/?chicken-patiala",
+    about: { en: "Flavourful chicken curry with Punjabi touch.", hi: "पंजाबी स्वाद वाली चिकन करी।" },
+    ingredients: { en: ["Chicken", "Yogurt", "Spices"], hi: ["चिकन", "दही", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Kima", hi: "चिकन कीमा" },
+    price: 300,
+    image: "https://source.unsplash.com/400x300/?chicken-keema",
+    about: { en: "Minced chicken cooked with masala.", hi: "मसालों में पका हुआ चिकन कीमा।" },
+    ingredients: { en: ["Minced Chicken", "Onion", "Spices"], hi: ["चिकन कीमा", "प्याज", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Port Liver", hi: "चिकन पोर्ट लिवर" },
+    price: 250,
+    image: "https://source.unsplash.com/400x300/?chicken-liver",
+    about: { en: "Chicken liver cooked with Indian spices.", hi: "भारतीय मसालों में पका हुआ चिकन लीवर।" },
+    ingredients: { en: ["Chicken Liver", "Onion", "Spices"], hi: ["चिकन लीवर", "प्याज", "मसाले"] }
+  },
+  {
+    type: "deliciousGravyChicken",
+    name: { en: "Chicken Tikka Bt. Masala", hi: "चिकन टिक्का बटर मसाला" },
+    price: 300,
+    image: "https://source.unsplash.com/400x300/?chicken-tikka-masala",
+    about: { en: "Chicken tikka pieces cooked in buttery gravy.", hi: "बटर ग्रेवी में पके चिकन टिक्का पीस।" },
+    ingredients: { en: ["Chicken Tikka", "Butter", "Cream", "Spices"], hi: ["चिकन टिक्का", "मक्खन", "क्रीम", "मसाले"] }
+  },
+
+
+
+  //kababveg
+
+
+  {
+    type: "kababVegSpecial",
+    name: { en: "Hara Bhara Kabab", hi: "हरा भरा कबाब" },
+    price: 230,
+    image: "https://source.unsplash.com/400x300/?hara-bhara-kabab",
+    about: { en: "Healthy kababs made with spinach, peas, and potatoes.", hi: "पालक, मटर और आलू से बने स्वादिष्ट कबाब।" },
+    ingredients: { en: ["Spinach", "Peas", "Potato", "Spices"], hi: ["पालक", "मटर", "आलू", "मसाले"] }
+  },
+  {
+    type: "kababVegSpecial",
+    name: { en: "Veg Seek Kabab", hi: "वेग सीख कबाब" },
+    price: 260,
+    image: "https://source.unsplash.com/400x300/?veg-seekh-kabab",
+    about: { en: "Vegetable kababs grilled on skewers with spices.", hi: "सब्जियों के कबाब मसालों के साथ सीख पर ग्रिल किए गए।" },
+    ingredients: { en: ["Mixed Vegetables", "Potato", "Spices"], hi: ["मिक्स सब्ज़ियां", "आलू", "मसाले"] }
+  },
+  {
+    type: "kababVegSpecial",
+    name: { en: "Paneer Tikka", hi: "पनीर टिक्का" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?paneer-tikka",
+    about: { en: "Marinated paneer cubes grilled to perfection.", hi: "मैरीनेट किए हुए पनीर क्यूब्स तंदूर में ग्रिल किए गए।" },
+    ingredients: { en: ["Paneer", "Yogurt", "Spices"], hi: ["पनीर", "दही", "मसाले"] }
+  },
+  {
+    type: "kababVegSpecial",
+    name: { en: "Mushroom Tikka", hi: "मशरूम टिक्का" },
+    price: 280,
+    image: "https://source.unsplash.com/400x300/?mushroom-tikka",
+    about: { en: "Fresh mushrooms marinated with spices and grilled.", hi: "मसालों में मैरीनेट किए गए ताजे मशरूम ग्रिल किए गए।" },
+    ingredients: { en: ["Mushroom", "Yogurt", "Spices"], hi: ["मशरूम", "दही", "मसाले"] }
+  },
+  {
+    type: "kababVegSpecial",
+    name: { en: "Soya Veg Kabab", hi: "सोया वेज कबाब" },
+    price: 220,
+    image: "https://source.unsplash.com/400x300/?soya-kabab",
+    about: { en: "Nutritious kababs made with soya chunks and spices.", hi: "सोया चंक्स और मसालों से बने पौष्टिक कबाब।" },
+    ingredients: { en: ["Soya", "Potato", "Spices"], hi: ["सोया", "आलू", "मसाले"] }
+  },
+  {
+    type: "kababVegSpecial",
+    name: { en: "Hara Matar Paneer Tikka", hi: "हरा मटर पनीर टिक्का" },
+    price: 260,
+    image: "https://source.unsplash.com/400x300/?matar-paneer-tikka",
+    about: { en: "Paneer and green peas marinated with spices and grilled.", hi: "पनीर और हरे मटर मसालों में मैरीनेट करके ग्रिल किए गए।" },
+    ingredients: { en: ["Paneer", "Green Peas", "Spices"], hi: ["पनीर", "हरे मटर", "मसाले"] }
+  },
+
+
+
   {
     type: "kababNonVegSpecial",
     name: { en: "Chicken Tikka", hi: "चिकन टिक्का" },
@@ -1740,8 +2133,6 @@ const menuItems = [
 ];
 
 const menuSections = [
-
-
   // { type: "starters" },
   { type: "breakfast" },
   { type: "snacks" },
@@ -1762,7 +2153,14 @@ const menuSections = [
   { type: "fish" },
   { type: "egg" },
   { type: "kababNonVegSpecial" },
+  { type: "kababVegSpecial" },
+  { type: "deliciousGravyChicken" },
+  { type: "thandaGram" },
+  { type: "iceCreamDessert" },
+  { type: "raitaSaladPapad" },
+  { type: "thali" },
 ];
+
 
 // ----- QR Code -----
 document.addEventListener("DOMContentLoaded", () => {

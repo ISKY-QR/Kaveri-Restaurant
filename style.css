@@ -203,6 +203,40 @@ header h1 {
   box-shadow: 2px 2px 8px #d6c491aa;
 }
 
+
+.site-footer {
+  background: #e2c799;
+  color: #5a4422;
+  text-align: center;
+  padding: 18px 12px;
+  border-top: 3px solid #bfa570;
+  font-family: 'Georgia', serif;
+  font-size: 0.95rem;
+}
+
+.site-footer a {
+  color: #5a4422;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+  color: #8c6521;
+}
+
+.contact-info {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.credit {
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: #7a5a33;
+  font-style: italic;
+}
+
 .qr-screen {
   text-align: center;
   margin-top: 50px;

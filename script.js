@@ -36,6 +36,8 @@ const translations = {
       iceCreamDessert: "iceCreamDessert",
       raitaSaladPapad: "raitaSaladPapad",
       thali: "thali",
+      SoupVeg: "SoupVeg",
+      nonVegNoodles: "nonVegNoodles",
     }
   },
   hi: {
@@ -50,36 +52,152 @@ const translations = {
       drinks: "पेय",
       desserts: "मिठाइयाँ",
       snacks: "स्नैक्स",
-      soupVegetarian: "soupVegetarian",
-      basmatiRice: "basmatiRice",
-      soupNonveg: "soupNonveg",
-      starterVegChinese: "starterVegChinese",
-      starterNonVegChinese: "starterNonVegChinese",
-      vegNoodles: "vegNoodles",
-      rotiNaanKulchaParatha: "rotiNaanKulchaParatha",
-      basmatiRiceChineseVegNonVeg: "basmatiRiceChineseVegNonVeg",
-      northIndianGreenVeg: "northIndianGreenVeg",
-      mutton: "mutton",
-      fish: "fish",
-      egg: "egg",
-      kababNonVegSpecial: "kababNonVegSpecial",
+      soupVegetarian: "सूप वेज",
+      basmatiRice: "बासमती राइस",
+      soupNonveg: "सूप नॉनवेज",
+      starterVegChinese: "स्टार्टर वेज चाइनीज",
+      starterNonVegChinese: "स्टार्टर नॉन वेज चाइनीज",
+      vegNoodles: "शाकाहारी नूडल्स",
+      rotiNaanKulchaParatha: "रोटी, नान, कुलचा, पराठा",
+      basmatiRiceChineseVegNonVeg: "बासमती राइस वेज नॉन वेज",
+      northIndianGreenVeg: "उत्तर भारतीय हरी सब्ज़ियाँ",
+      mutton: "मटन",
+      fish: "मछली",
+      egg: "अंडा",
+      kababNonVegSpecial: "कबाब नॉनवेज स्पेशल",
       soupNonveg: "सूप नॉनवेज",
       starterVegChinese: "स्टार्टर वेज चाइनीज",
       starterNonVegChinese: "स्टार्टर नॉन वेज चाइनीज",
       rotiNaanKulchaParatha: "रोटी, नान, कुलचा, पराठा",
       dal: "दाल",
-      kababVegSpecial: "kababVegSpecial",
+      kababVegSpecial: "कबाब वेज स्पेशल",
       deliciousGravyChicken: "स्वादिष्ट ग्रेवी चिकन",
       thandaGram: "ठंडा गरम",
       iceCreamDessert: "आइसक्रीम, मिठाई",
       raitaSaladPapad: "रायता सलाद पापड़",
       thali: "थाली",
+      SoupVeg: "शाकाहारी सूप",
+      nonVegNoodles: "नॉन वेज नूडल्स",
     }
   }
 };
 
 
 const menuItems = [
+
+
+
+
+
+
+  // non veg noodels
+
+  {
+    type: "nonVegNoodles",
+    name: { en: "Chicken Hakka Noodles", hi: "चिकन हक्का नूडल्स" },
+    price: 220,
+    image: "https://pupswithchopsticks.com/wp-content/uploads/hakka-noodles-5.jpg",
+    about: { en: "Stir-fried noodles with chicken and vegetables.", hi: "चिकन और सब्ज़ियों के साथ तली हुई नूडल्स।" },
+    ingredients: { en: ["Noodles", "Chicken", "Vegetables", "Soy Sauce"], hi: ["नूडल्स", "चिकन", "सब्ज़ियाँ", "सोया सॉस"] }
+  },
+  {
+    type: "nonVegNoodles",
+    name: { en: "Mix Non-Veg Noodles", hi: "मिक्स नॉनवेज नूडल्स" },
+    price: 240,
+    image: "https://i.ytimg.com/vi/MhzBUy-JOCE/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBHrjt0krn7AlWVFHVR222EZTfRQg",
+    about: { en: "A mix of chicken, egg, and vegetables tossed with noodles.", hi: "चिकन, अंडा और सब्ज़ियों के साथ तली हुई नूडल्स।" },
+    ingredients: { en: ["Noodles", "Chicken", "Egg", "Vegetables"], hi: ["नूडल्स", "चिकन", "अंडा", "सब्ज़ियाँ"] }
+  },
+  {
+    type: "nonVegNoodles",
+    name: { en: "Chicken Schezwan Noodles", hi: "चिकन शेज़वान नूडल्स" },
+    price: 220,
+    image: "https://dms.mydukaan.io/original/jpeg/media/1ee99947-7e6f-4d04-a2df-278c9baacd75.webp",
+    about: { en: "Spicy Schezwan style noodles with chicken.", hi: "चिकन के साथ मसालेदार शेज़वान स्टाइल नूडल्स।" },
+    ingredients: { en: ["Noodles", "Chicken", "Schezwan Sauce"], hi: ["नूडल्स", "चिकन", "शेज़वान सॉस"] }
+  },
+  {
+    type: "nonVegNoodles",
+    name: { en: "Egg Hakka Noodles", hi: "एग हक्का नूडल्स" },
+    price: 180,
+    image: "https://www.sharmispassions.com/wp-content/uploads/2012/01/EggNoodles3-500x500.jpg",
+    about: { en: "Hakka noodles tossed with scrambled eggs and veggies.", hi: "फेंटे हुए अंडे और सब्ज़ियों के साथ हक्का नूडल्स।" },
+    ingredients: { en: ["Noodles", "Egg", "Vegetables"], hi: ["नूडल्स", "अंडा", "सब्ज़ियाँ"] }
+  },
+
+  // soup vegetarian
+  {
+    type: "SoupVeg",
+    name: { en: "Veg Tomato Soup", hi: "वेज टमाटर सूप" },
+    price: 100,
+    image: "https://simplegreensmoothies.com/wp-content/uploads/vegan-tomato-soup-recipe-close.jpg",
+    about: { en: "Classic tomato soup with herbs and spices.", hi: "जड़ी-बूटियों और मसालों के साथ क्लासिक टमाटर सूप।" },
+    ingredients: { en: ["Tomato", "Spices", "Herbs"], hi: ["टमाटर", "मसाले", "जड़ी-बूटियाँ"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Veg Sweet Corn Soup", hi: "वेज स्वीट कॉर्न सूप" },
+    price: 100,
+    image: "https://greenbowl2soul.com/wp-content/uploads/2023/03/Sweet-corn-soup.jpg",
+    about: { en: "Sweet corn soup with vegetables.", hi: "सब्ज़ियों के साथ मीठा कॉर्न सूप।" },
+    ingredients: { en: ["Sweet Corn", "Vegetables", "Spices"], hi: ["स्वीट कॉर्न", "सब्ज़ियाँ", "मसाले"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Veg Manchow Soup", hi: "वेज मंचाउ सूप" },
+    price: 100,
+    image: "https://easyindiancookbook.com/wp-content/uploads/2023/07/manchow-soup-veg-6.jpg",
+    about: { en: "Spicy Indo-Chinese soup with fried noodles topping.", hi: "तली हुई नूडल्स के साथ मसालेदार इंडो-चाइनीज़ सूप।" },
+    ingredients: { en: ["Vegetables", "Soy Sauce", "Garlic"], hi: ["सब्ज़ियाँ", "सोया सॉस", "लहसुन"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Veg Clear Soup", hi: "वेज क्लियर सूप" },
+    price: 100,
+    image: "https://source.uhttps://www.sharmispassions.com/wp-content/uploads/2013/07/ClearSoup4.jpgnsplash.com/400x300/?clear-soup",
+    about: { en: "Light and healhttpsthy clear soup with fresh veggies.", hi: "ताज़ी सब्ज़ियों के साथ हल्का और पौष्टिक क्लियर सूप।" },
+    ingredients: { en: ["Carrot", "Beans", "Cabbage"], hi: ["गाजर", "फली", "पत्तागोभी"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Veg Kaveri Soup", hi: "वेज कावेरी सूप" },
+    price: 110,
+    image: "https://b.zmtcdn.com/data/dish_photos/baa/54470ecf7e6f72152a29d3ee0a572baa.jpg",
+    about: { en: "House special Kaveri style vegetable soup.", hi: "कावेरी स्टाइल का स्पेशल वेजिटेबल सूप।" },
+    ingredients: { en: ["Vegetables", "Spices"], hi: ["सब्ज़ियाँ", "मसाले"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Veg Hot & Sour Soup", hi: "वेज हॉट एंड सौर सूप" },
+    price: 100,
+    image: "https://masalachilli.com/wp-content/uploads/2021/07/Hot-and-Sour-Soup-3.jpg",
+    about: { en: "Spicy and tangy hot & sour soup.", hi: "मसालेदार और खट्टा-मीठा हॉट एंड सौर सूप।" },
+    ingredients: { en: ["Chili", "Vinegar", "Vegetables"], hi: ["मिर्च", "सिरका", "सब्ज़ियाँ"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Cream of Mushroom Soup", hi: "क्रीम ऑफ मशरूम सूप" },
+    price: 120,
+    image: "https://www.billyparisi.com/wp-content/uploads/2021/02/mushroom-soup-1.jpg",
+    about: { en: "Creamy soup made with mushrooms.", hi: "मशरूम से बना मलाईदार सूप।" },
+    ingredients: { en: ["Mushroom", "Cream", "Spices"], hi: ["मशरूम", "क्रीम", "मसाले"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Gourd Soup", hi: "लौकी का सूप" },
+    price: 100,
+    image: "https://mildlyindian.com/wp-content/uploads/2018/11/Lauki-Shorba.jpg",
+    about: { en: "Healthy bottle gourd soup.", hi: "स्वास्थ्यवर्धक लौकी का सूप।" },
+    ingredients: { en: ["Bottle Gourd", "Spices"], hi: ["लौकी", "मसाले"] }
+  },
+  {
+    type: "SoupVeg",
+    name: { en: "Spinach Soup (Palak)", hi: "पालक सूप" },
+    price: 110,
+    image: "https://cdn.cdnparenting.com/articles/2020/02/19121318/Palak-Soup-Recipe.webp",
+    about: { en: "Nutritious spinach soup.", hi: "पौष्टिक पालक का सूप।" },
+    ingredients: { en: ["Spinach", "Garlic", "Spices"], hi: ["पालक", "लहसुन", "मसाले"] }
+  },
 
 
 
@@ -2159,6 +2277,9 @@ const menuSections = [
   { type: "iceCreamDessert" },
   { type: "raitaSaladPapad" },
   { type: "thali" },
+  { type: "SoupVeg" },
+  { type: "nonVegNoodles" },
+
 ];
 
 
